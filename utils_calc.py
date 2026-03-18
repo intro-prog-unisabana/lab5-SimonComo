@@ -1,15 +1,29 @@
-def find_max(a, b, c):
-    if a >= b and a >= c:
-        return a
-    elif b >= a and b >= c:
-        return b
-    else:
-        return c
+def add(num1, num2):
+    return num1 + num2
 
-a = int(input("Enter a number:\n"))
-b = int(input("Enter a number:\n"))
-c = int(input("Enter a number:\n"))
+def sub(num1, num2):
+    return num1 - num2
 
-resultado = find_max(a, b, c)
+def multiply(num1, num2):
+    return num1 * num2
 
-print(f"Maximum value: {resultado}")
+def divide(num1, num2):
+    if num2 == 0:
+        return "Error: Division by zero is not allowed."
+    return num1 / num2
+
+def exponent(base, exp):
+    return base ** exp
+
+def modulo(num1, num2):
+    if num2 == 0:
+        return "Error: Modulo by zero is not allowed."
+    return num1 % num2
+
+def floor_divide(num1, num2):
+    if num2 == 0:
+        return "Error: Division by zero is not allowed."
+    return num1 // num2
+
+def absolute(num):
+    return abs(num)
