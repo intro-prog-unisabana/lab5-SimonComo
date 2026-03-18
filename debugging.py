@@ -1,58 +1,24 @@
 # debugging.py
+def total_steps(steps):
+    return sum(steps)
 
-# Function to get user input
-def get_daily_steps():
-    """Return list of daily steps."""
-    steps = input("Enter your daily steps for 7 days separated by spaces: ")
-    step_list = steps.split
-    step_list = [int(s) for s in step_list]
-    return step_list
+def average_steps(steps):
+    return sum(steps) // len(steps)
 
-# Function to calculate total steps
-def total_steps(nums):
-    """Return total steps."""
-    total = sum(nums)
+def max_steps(steps):
+    return max(steps)
 
-# Function to calculate average daily steps
-def average_steps(total, days=7):
-    """Return average steps as int."""
-    return total / days
+def min_steps(steps):
+    return min(steps)
 
-# Function to get maximum steps
-def max_steps(nums):
-    """Return max steps."""
-    max_val = max(nums)
-    return maxvalue
+def goal_met(steps):
+    return [step >= 10000 for step in steps]
 
-# Function to get minimum steps
-def min_steps(nums):
-    """Return min steps."""
-    return min(nums)
+entrada = input()
+steps = list(map(int, entrada.split()))
 
-# Function to check if each day meets the goal
-def goal_check(nums, goal=10000):
-    """Return list of booleans for goal."""
-    result = []
-    for s in nums:
-        if s >= goal:
-            result.append("True")
-        else:
-            result.append("False")
-    return result
-
-# ----------------------
-# Main Program
-# ----------------------
-step_list = get_daily_steps()
-
-total = total_steps(step_list)
-average = average_steps(total)
-highest = max_steps(step_list)
-lowest = min_steps(step_list)
-goal_met = goal_check(step_list)
-
-print("Total steps:", total)
-print("Average daily steps:", average)
-print("Highest steps in a day:", highest)
-print("Lowest steps in a day:", lowest)
-print("Goal met each day:", goal_met)
+print("Total steps:", total_steps(steps))
+print("Average daily steps:", average_steps(steps))
+print("Highest steps in a day:", max_steps(steps))
+print("Lowest steps in a day:", min_steps(steps))
+print("Goal met each day:", goal_met(steps))

@@ -1,28 +1,20 @@
-from secret_number import seed_secret_numbers, generate_secret_number
-from response import input_response
+from secret_number import *
+from response import *
 
+seed = int(input("Enter a seed number:\n"))
+seed_secret_numbers(seed)
 
-def main():
+secret = generate_secret_number()
 
-    seed = int(input("Enter a seed number: "))
-    seed_secret_numbers(seed)
+intentos = 0
 
-    secret_number = generate_secret_number()
+while True:
+    guess = int(input("What is your guess:\n"))
+    intentos += 1
 
-    tries = 0
-    correct = False
+    mensaje, correcto = input_response(secret, guess)
+    print(mensaje)
 
-    while not correct:
-
-        guess = int(input("What is your guess: "))
-        tries += 1
-
-        message, correct = input_response(secret_number, guess)
-        print(message)
-
-    print(f"It took you {tries} tries!")
-
-
-if _name_ == "_main_":
-    main()
-    
+    if correcto:
+        print(f"It took you {intentos} tries!")
+        break
